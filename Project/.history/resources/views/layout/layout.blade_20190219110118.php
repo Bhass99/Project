@@ -11,7 +11,6 @@
     <title>Impala</title>
 </head>
 <body>
-    @yield('content')`
-    @yield('extra-js')
+    @yield('content')
 </body>
 </html>
