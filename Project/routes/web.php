@@ -16,7 +16,7 @@ Route::get('/', 'PageController@index');
 Route::get('/contact', function () {
     return view('pages.contact');
 });
-Route::get('/login', function () {
+Route::get('/loginn', function () {
     return view('pages.login');
 });
 
