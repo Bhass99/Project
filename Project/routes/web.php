@@ -22,7 +22,7 @@ Route::get('/edit/{id}', 'EventsController@edit')->name('editDate');
 Route::get('/contact', function () {
     return view('pages.contact');
 });
-Route::get('/login', function () {
+Route::get('/loginn', function () {
     return view('pages.login');
 });
 Auth::routes();
