@@ -1,58 +1,131 @@
-.header {
+.menu {
     padding: 10px;
     width: 100%;
     height: 50px;
-    background: #dbdbdb;
+    background: white;
     color: #ffffff;
     text-align: center;
     overflow: hidden;
+    border-top: 2px solid #dbdbdb;
+    border-bottom: 2px solid #dbdbdb;
 }
 
+.header {
+  padding: 10px;
+  width: 100%;
+  height: 48px;
+  background: #dbdbdb;
+  color: #ffffff;
+  text-align: left;
+  overflow: hidden;
+  
+}
+
+.right {
+  float: right;
+}
+
+b {
+  font-size: 0.8em;
+}
+
+b:hover {
+  text-decoration: underline;
+}
 .logoleft {
-    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5%;
 }
 
-.textright {
-    text-align: right;
+IMG.displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
-.header a {
+
+.buttonposition {
+  float: right;
+  margin-right: 20%;
+  margin-top: 3%;
+}
+
+
+.menu a {
     font-size: 20px;
     display: inline;
     text-decoration: none;
     color: black;
+    padding: 1em;
+    width: 100% !important;
 }
 
-.header a:hover {
-    color: gray;
+.menu a:hover {
+    color: rgb(0, 104, 172);
     text-decoration: none;
+    border-top: 4px solid blue;
 }
 
-.header .icon {
+.menu .icon {
     display: none;
   }
 
 @media screen and (max-width: 600px) {
-    .header a:not(:first-child) {display: none;}
-    .header a.icon {
+    .menu {
+      padding: 0;
+    }
+
+    IMG.displayed {
+      position: absolute;
+    right: 44%;
+    left: 44%;
+    top: 7.7%;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.9);
+      
+    }
+
+    .menu a {
+      display: none;
+    }
+    .menu a.icon {
       float: right;
       display: block;
     }
   }
   
   @media screen and (max-width: 600px) {
-    .header.responsive {
+    .menu.responsive {
         position: relative;
         height: 100px;
     }
-    .header.responsive .icon {
+    .menu.responsive .icon {
       position: absolute;
       right: 0;
       top: 0;
     }
-    .header.responsive a {
+    .menu.responsive a {
       float: none;
       display: block;
-      text-align: left;
+      text-align: center;
+      border-top: none;
+      padding: 0;
+      border-bottom: 2px solid #dbdbdb;
+    }
+  }
+
+  .visible-mobile {
+    display: none !important;
+  }
+  
+  @media (max-width: 489px) {
+    .visible-mobile {
+      display: block !important;
+    }
+  
+    .hidden-mobile {
+      display: none !important;
     }
   }
