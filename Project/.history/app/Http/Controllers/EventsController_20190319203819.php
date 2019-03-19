@@ -44,7 +44,7 @@ class EventsController extends Controller
         ]); 
 
         // check if user has volunteerd so that the user cant volunteer twice to the same date
-        $userId = Auth::user()->id;
+        // $userId = Auth::user()->id;
         // $volunteer = Volunteers::
         //     where('user_id',$userId)
         //     ->get();

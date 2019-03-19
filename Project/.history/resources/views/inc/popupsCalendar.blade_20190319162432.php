@@ -47,8 +47,6 @@
                   <tr class="warning">
                     <th>Begin datum</th>
                     <th>Eind datum</th>
-                    <th>&nbsp;</th>
-                    <th>In afwachting</th>
                   </tr>
                     @foreach ($emplWork as $event)
                       <tbody>
@@ -62,14 +60,6 @@
                                   <input type="hidden" name="user_id" value="{{$userId}}">
                                   <button type="submit" class="btn btn-secondary text-white">Werk</button>
                                 </form>
-                              </td>
-                              <td>
-                                @if (\App\Volunteers::where('event_id',$event->id)->get() )
-                                    in afwachting
-                                    {{-- {{dd(\App\Volunteers::where('event_id',$event->id)->get())}} --}}
-                                @else
-                                    fbgdf
-                                @endif
                               </td>
                           </tr>
                       </tbody>

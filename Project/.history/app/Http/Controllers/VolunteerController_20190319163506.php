@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Volunteers;
 use Illuminate\Http\Request;
 
 class VolunteerController extends Controller
@@ -42,7 +41,7 @@ class VolunteerController extends Controller
             'permission' => 'nullable',
         ]);
 
-        $volunteer = new Volunteers($request->all());
+        $volunteer = new Volunteer($request->all());
 
         $volunteer->save();
         return redirect()->route('events')->with('success', 'Je hebt successvol een verzoek gedaan');

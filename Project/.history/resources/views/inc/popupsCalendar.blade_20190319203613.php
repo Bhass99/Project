@@ -66,9 +66,8 @@
                               <td>
                                 @if (\App\Volunteers::where('event_id',$event->id)->get() )
                                     in afwachting
-                                    {{-- {{dd(\App\Volunteers::where('event_id',$event->id)->get())}} --}}
                                 @else
-                                    fbgdf
+                                    
                                 @endif
                               </td>
                           </tr>

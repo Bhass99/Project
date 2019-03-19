@@ -64,11 +64,10 @@
                                 </form>
                               </td>
                               <td>
-                                @if (\App\Volunteers::where('event_id',$event->id)->get() )
+                                @if ($volunteer && $event->id ==  )
                                     in afwachting
-                                    {{-- {{dd(\App\Volunteers::where('event_id',$event->id)->get())}} --}}
                                 @else
-                                    fbgdf
+                                    
                                 @endif
                               </td>
                           </tr>

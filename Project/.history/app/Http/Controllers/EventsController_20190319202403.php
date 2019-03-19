@@ -45,14 +45,16 @@ class EventsController extends Controller
 
         // check if user has volunteerd so that the user cant volunteer twice to the same date
         $userId = Auth::user()->id;
-        // $volunteer = Volunteers::
-        //     where('user_id',$userId)
-        //     ->get();
-        // $volunteerEvent_id = Volunteers::pluck('event_id');
-    //    dd($volunteerEvent_id);
+        $volunteer = Volunteers::
+            where('user_id',$userId)
+            ->get();
+        $volunteerEvent_id = Volunteers::
+            where('event_id')
+            ->get();
+       
         
 
-        return view('pages.index', compact('calendar','events','emplNeed','emplWork','userId'));
+        return view('pages.index', compact('calendar','events','emplNeed','emplWork','userId','volunteer'));
     }
     public function create(){
         return view('pages.addEvent');

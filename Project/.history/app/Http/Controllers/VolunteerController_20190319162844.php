@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Volunteers;
 use Illuminate\Http\Request;
 
 class VolunteerController extends Controller
@@ -36,18 +35,11 @@ class VolunteerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'user_id' => 'required',
-            'event_id' => 'required',
-            'check' => 'nullable',
-            'permission' => 'nullable',
+            'title' => 'required|string|max:255',
+            'color' => 'required',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date', 
         ]);
-
-        $volunteer = new Volunteers($request->all());
-
-        $volunteer->save();
-        return redirect()->route('events')->with('success', 'Je hebt successvol een verzoek gedaan');
-
-        
     }
 
     /**

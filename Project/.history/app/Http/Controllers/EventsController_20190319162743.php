@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Event;
-use App\Volunteers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
@@ -13,10 +12,9 @@ class EventsController extends Controller
     public function index(){
         $events = [];
         $data = Event::all();
+        $userId = Auth::user()->id;
         $emplNeed = Event::paginate(2);
         $emplWork = Event::paginate(10);
-
-        // caledar setup 
         foreach ($data as $row) {
             $events[] = Calendar::event(
             $row->title,
@@ -30,7 +28,7 @@ class EventsController extends Controller
             ]
             );
         }
-        $calendar = Calendar::addEvents($events)->setOptions([ 
+        $calendar = Calendar::addEvents($events)->setOptions([ //set fullcalendar options
             'firstDay' => 1,
             'selectable' => true,
             'contentHeight' => 450,
@@ -42,14 +40,6 @@ class EventsController extends Controller
                 showModal();
             }'
         ]); 
-
-        // check if user has volunteerd so that the user cant volunteer twice to the same date
-        $userId = Auth::user()->id;
-        // $volunteer = Volunteers::
-        //     where('user_id',$userId)
-        //     ->get();
-        // $volunteerEvent_id = Volunteers::pluck('event_id');
-    //    dd($volunteerEvent_id);
         
 
         return view('pages.index', compact('calendar','events','emplNeed','emplWork','userId'));

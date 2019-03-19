@@ -30,7 +30,7 @@ class EventsController extends Controller
             ]
             );
         }
-        $calendar = Calendar::addEvents($events)->setOptions([ 
+        $calendar = Calendar::addEvents($events)->setOptions([ //set fullcalendar options
             'firstDay' => 1,
             'selectable' => true,
             'contentHeight' => 450,
@@ -44,12 +44,12 @@ class EventsController extends Controller
         ]); 
 
         // check if user has volunteerd so that the user cant volunteer twice to the same date
+        $event_id = Event::pluck('id'); 
         $userId = Auth::user()->id;
-        // $volunteer = Volunteers::
-        //     where('user_id',$userId)
-        //     ->get();
-        // $volunteerEvent_id = Volunteers::pluck('event_id');
-    //    dd($volunteerEvent_id);
+        $volunteer = Volunteers::where('event_id',$event_id)->get();
+        $volunteerUser = Volunteer::where('user_id',$userId);
+        dd($volunteerUser);
+        
         
 
         return view('pages.index', compact('calendar','events','emplNeed','emplWork','userId'));

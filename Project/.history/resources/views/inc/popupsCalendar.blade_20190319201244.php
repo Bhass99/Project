@@ -63,14 +63,7 @@
                                   <button type="submit" class="btn btn-secondary text-white">Werk</button>
                                 </form>
                               </td>
-                              <td>
-                                @if (\App\Volunteers::where('event_id',$event->id)->get() )
-                                    in afwachting
-                                    {{-- {{dd(\App\Volunteers::where('event_id',$event->id)->get())}} --}}
-                                @else
-                                    fbgdf
-                                @endif
-                              </td>
+                              
                           </tr>
                       </tbody>
                     @endforeach

@@ -64,7 +64,7 @@
                                 </form>
                               </td>
                               <td>
-                                @if (\App\Volunteers::where('event_id',$event->id)->get() )
+                                @if (\App\Volunteers::where('event_id',$event->id)->where('user_id',$userId)->get() )
                                     in afwachting
                                     {{-- {{dd(\App\Volunteers::where('event_id',$event->id)->get())}} --}}
                                 @else
