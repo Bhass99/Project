@@ -11,15 +11,20 @@
 |
 */
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'EventsController@index')->name('events');
+Route::get('/display', 'EventsController@show')->name('displayEvents');
+// Route::get('/create', 'EventsController@create')->name('newDate');
+Route::post('/store', 'EventsController@store')->name('saveDate');
+Route::patch('/update/{id}', 'EventsController@update')->name('updateDate');
+Route::delete('/delete/{id}', 'EventsController@delete')->name('deleteDate');
+Route::get('/edit/{id}', 'EventsController@edit')->name('editDate');
 
 Route::get('/contact', function () {
     return view('pages.contact');
 });
-Route::get('/login', function () {
+Route::get('/loginn', function () {
     return view('pages.login');
 });
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
