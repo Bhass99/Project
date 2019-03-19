@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassTimes extends Migration
+class CreateVolunteersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateClassTimes extends Migration
      */
     public function up()
     {
-        Schema::create('class_times', function (Blueprint $table) {
+        Schema::create('volunteers', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('start_time');
-            $table->date('end_time');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateClassTimes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_times');
+        Schema::dropIfExists('volunteers');
     }
 }

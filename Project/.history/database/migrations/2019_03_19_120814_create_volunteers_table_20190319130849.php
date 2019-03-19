@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShifts extends Migration
+class CreateVolunteersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateShifts extends Migration
      */
     public function up()
     {
-        Schema::create('shifts', function (Blueprint $table) {
+        Schema::create('volunteers', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
+            
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateShifts extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shifts');
+        Schema::dropIfExists('volunteers');
     }
 }
