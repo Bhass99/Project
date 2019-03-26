@@ -32,7 +32,7 @@
 <div class="container">
     <div class="card ">
         <div class="card-header text-center">
-            <h2>Contacteer ons</h2>
+            <h2>Contacteer ons <i class="fa fa-paper-plane-o"></i></h2>
         </div>
         <div class="form-group ml-2">
         <label>Voornaam</label>
@@ -58,6 +58,7 @@
     </div>
    
 </div>
+
 
 
 
