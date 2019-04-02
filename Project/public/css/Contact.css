@@ -3,6 +3,7 @@ html, body{
 
 }
 
+<<<<<<< HEAD
 input[type=text], select, textarea {
     width: 100%;
    
@@ -25,3 +26,12 @@ input[type=text], select, textarea {
    margin-top: 2%;
    font-weight: bold;
  }
+=======
+/* input[type=text], select, textarea {
+    width: 50%;
+   
+    
+  }
+   */
+ 
+>>>>>>> aeea83119436fc3fff9c2a92d52217858f52f24f

@@ -2,3 +2,9 @@
   height: 100vh;
 }
 
+@media screen and (max-width: 321px) {
+  .fc-right {
+    float: none !important;
+  }
+}
+

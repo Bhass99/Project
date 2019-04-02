@@ -1,6 +1,6 @@
-@extends('layout.layout')
 
 
+<<<<<<< HEAD
 @section('content')
 
 <body>
@@ -14,6 +14,12 @@
                  <div class="col-5">
           
           
+=======
+<!-- <div class="form">
+    <p class="FText"> Contacteer ons,</p>
+    <p class="FText1"> Of kom langs voor een kop koffie</p>
+  <form action="">
+>>>>>>> aeea83119436fc3fff9c2a92d52217858f52f24f
 
                 <div class="form-group ml-2">
                 <label>Voornaam</label>
@@ -33,6 +39,7 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="form-group ml-2">
                 <label> Bericht</label>
                 <textarea class="form-control" id="subject" name="subject" placeholder="Uw bericht" style="width:100%;height:170px"></textarea>
@@ -44,6 +51,16 @@
                 </div>
     
    
+=======
+<div class="container">
+    <div class="card ">
+        <div class="card-header text-center">
+            <h2>Contacteer ons <i class="fa fa-paper-plane-o"></i></h2>
+        </div>
+        <div class="form-group ml-2">
+        <label>Voornaam</label>
+        <input  type="text"class="form-control" placeholder="Voornaam">
+>>>>>>> aeea83119436fc3fff9c2a92d52217858f52f24f
 
               
          
@@ -65,11 +82,16 @@
                     </div>
 
 
+<<<<<<< HEAD
                     </div>
             </div>
         </div>  
     </div> 
 </div>
+=======
+
+<footer>
+>>>>>>> aeea83119436fc3fff9c2a92d52217858f52f24f
 
 </body>
 
@@ -78,4 +100,3 @@
 
 
 
-@endsection
