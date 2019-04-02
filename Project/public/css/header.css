@@ -8,6 +8,7 @@
     overflow: hidden;
     border-top: 2px solid #dbdbdb;
     border-bottom: 2px solid #dbdbdb;
+   margin-bottom: 4%;
 }
 
 .header {
@@ -37,6 +38,17 @@ b:hover {
     margin-right: auto;
     margin-top: 1.5%;
 }
+
+.textleft {
+  margin-left: 17%;
+  
+}
+
+.textright {
+  margin-right: 17%;
+  
+}
+
 
 IMG.displayed {
   display: block;
@@ -100,6 +112,7 @@ IMG.displayed {
 
   .overlay {
     position: fixed;
+    z-index: 99;
     top: 0;
     bottom: 0;
     left: 0;
@@ -115,13 +128,12 @@ IMG.displayed {
   }
   
   .popup {
-    position: absolute;
-    z-index: -1;
+  
     margin: 70px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 30%;
+    width: 40vw;
     position: relative;
     transition: all 5s ease-in-out;
   }

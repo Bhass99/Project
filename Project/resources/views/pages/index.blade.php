@@ -1,6 +1,9 @@
 @extends('layout.layout')
 
 @section('content')
+
+@include('inc/header')
+
 <section id="calendarSection">
   <div class="container" >
     @if (count($errors) > 0)
@@ -15,6 +18,7 @@
       </div>
     @endif
    
+    
     @include('inc/popupsCalendar')
     <div class="row">
       <div class="col-lg-8">
@@ -63,7 +67,10 @@
     @endguest
   </div>
 </section>
+@include('pages/contact')
 @endsection
+
+
 
 @section('extra-js')
 <script type="text/javascript" src="{{asset('js/calender.js')}}"></script>

@@ -1,16 +1,39 @@
 
-@extends('layout.layout')
-@section('content')
-
 <div class="header">
-    
+    <div class="container">
+         <!-- Authentication Links -->
+         @guest
+         <div class="right">
+             <a href="#popup1"><b>Login</b></a> |
+             <a href="#popup2"><b>Nog geen account? registreer dan hier!</b></a>
+             <i class="fa fa-facebook"></i>
+       </div>
+     @else
+         Welkom, {{ Auth::user()->name }} <span class="caret"></span>
+       
+             <a class="float-right text-white" href="{{ route('logout') }}"
+             onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+          </a>
+        
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+         
 
-    <div class="right">
-            <a href="#popup1"><b>Login</b></a> |
-            <a href="#popup2"><b>Nog geen account? registreer dan hier!</b></a>
-        <i class="fa fa-facebook"></i>
-      </div>
+              
+     @endguest
+ 
+
+    </div>
+        
+               
+
+    
   </div>
+
+  
   
   <div id="popup1" class="overlay">
     <div class="popup">
@@ -120,6 +143,19 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="last_name" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required >
+    
+                                    @if ($errors->has('last_name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('last_name') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
     
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -168,7 +204,6 @@
                     </div>
                 </div>
             </div>
-        </div>
       </div>
     </div>
 
@@ -231,5 +266,4 @@ if (x.className === "menu") {
 </script>   
 
 
-@endsection
 

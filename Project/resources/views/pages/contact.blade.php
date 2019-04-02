@@ -1,7 +1,4 @@
-@extends('layout.layout')
 
-
-@section('content')
 
 <!-- <div class="form">
     <p class="FText"> Contacteer ons,</p>
@@ -73,4 +70,3 @@
 
 
 
-@endsection
