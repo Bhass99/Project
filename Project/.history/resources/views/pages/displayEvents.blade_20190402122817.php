@@ -32,7 +32,7 @@
                         <td>{{ $event->id}}</td>
                         <td>{{ $event->title}}</td>
                         <td> 
-                            <input type="color" disabled="disabled" class="form-control" value="{{$event->color}}"/>
+                            <input type="color" value="{{$event->color}}" disabled="disabled"/>
 
 
                         </td>

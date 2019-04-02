@@ -10,9 +10,11 @@ $(document).ready(function () {
         },
         weekNumbers: true,
         eventLimit: true,
+        events: 'https://fullcalendar.io/demo-events.json',
     });
+
 });
 
 var showModal = () => {
-    
+    alert('hh')
 }

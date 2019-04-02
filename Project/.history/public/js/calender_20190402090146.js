@@ -11,6 +11,7 @@ $(document).ready(function () {
         weekNumbers: true,
         eventLimit: true,
     });
+
 });
 
 var showModal = () => {

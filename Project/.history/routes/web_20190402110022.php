@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'EventsController@index')->name('events');
+
+
 Route::get('/contact', function () {
     return view('pages.contact');
 });
@@ -19,9 +21,9 @@ Route::get('/loginn', function () {
     return view('pages.login');
 });
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // Route::get('/home', 'HomeController@index')->name('home');
-
 Route::middleware('checkAuth')->group(function() {
     Route::resource('volunteer', 'VolunteerController');
 });

@@ -20,7 +20,7 @@
                     {{ method_field('PATCH') }}
                     <div class="form-group">
                         <label>titel</label>
-                        <input type="text" class="form-control" name="title" placeholder="title" value="{{$event->title}}"/>
+                        <input type="text" class="form-control" name="title" placeholder="title" value="{{old($event->title)}}"/>
                     </div>
                     <div class="form-group">
                         <label>kleur</label>

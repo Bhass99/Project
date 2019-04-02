@@ -15,6 +15,7 @@
                 <h1>Voeg een datum bij</h1>
             </div>
             <div class="card-body">
+
                 <form method="POST" action="{{route('saveDate')}}" >
                     @csrf
                     <div class="form-group">

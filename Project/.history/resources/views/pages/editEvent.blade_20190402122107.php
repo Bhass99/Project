@@ -11,10 +11,11 @@
             @endforeach
         @endif
         <div class="card">
+            <div class="card-heading">
+                <h1>Voeg een datum bij</h1>
+            </div>
             <div class="card-body">
-                <div class="card-heading">
-                    <h1>Voeg een datum bij</h1>
-                </div>
+
                 <form method="POST" action="{{route('updateDate', $event->id)}}" >
                     @csrf
                     {{ method_field('PATCH') }}

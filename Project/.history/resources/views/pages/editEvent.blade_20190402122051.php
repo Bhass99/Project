@@ -11,10 +11,11 @@
             @endforeach
         @endif
         <div class="card">
+            <div class="card-heading">
+                <h1>Voeg een datum bij</h1>
+            </div>
             <div class="card-body">
-                <div class="card-heading">
-                    <h1>Voeg een datum bij</h1>
-                </div>
+
                 <form method="POST" action="{{route('updateDate', $event->id)}}" >
                     @csrf
                     {{ method_field('PATCH') }}
@@ -36,9 +37,9 @@
                     </div>
     
                     <button type="submit" class="btn btn-primary">Wijzigen</button>
-                    <a href="{{route('displayEvents')}}" class="btn btn-secondary">Terug</a>
                 </form>
             </div>
+            <a href="{{route('displayEvents')}}" class="btn btn-secondary">terug</a>
         </div>
     </div>
 @endsection
