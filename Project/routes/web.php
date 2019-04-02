@@ -22,6 +22,9 @@ Route::get('/edit/{id}', 'EventsController@edit')->name('editDate');
 Route::get('/contact', function () {
     return view('pages.contact');
 });
+Route::get('/footer', function () {
+    return view('inc.footer');
+});
 Route::get('/loginn', function () {
     return view('pages.login');
 });
