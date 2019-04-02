@@ -4,8 +4,8 @@
          <!-- Authentication Links -->
          @guest
             <div class="right">
-                <a class="credintals" href="#popup1"><b>Login</b></a> |
-                <a class="credintals" href="#popup2"><b>Nog geen account? registreer dan hier!</b></a>
+                <a class="cred" href="#popup1"><b>Login</b></a> |
+                <a href="#popup2"><b>Nog geen account? registreer dan hier!</b></a>
             </div>
      @else
          Welkom, {{ Auth::user()->name }} <span class="caret"></span>

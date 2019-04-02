@@ -1,6 +1,6 @@
 
 @section('extra-css')
-    <link href="css/footer.css" rel="stylesheet">
+    <link href="Footer.css" rel="stylesheet">
 @endsection
 
 <footer class="footer-distributed">

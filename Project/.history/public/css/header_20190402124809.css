@@ -11,10 +11,7 @@
    margin-bottom: 4%;
 }
 
-.credintals{
- text-decoration:none !important;
-  color: white !important; 
-}
+
 
 .header {
   padding: 10px;
@@ -29,11 +26,9 @@
 
 .right {
   float: right;
-
 }
- a {
+a{
   text-decoration: none;
-
 }
 
 b {

@@ -5,7 +5,7 @@
              <h2>Contact ons</h2>
         </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-6">
                     <div class="form-group ml-2">
                     <label>Voornaam</label>
                     <input  type="text"class="form-control" placeholder="Voornaam">
@@ -34,8 +34,8 @@
                     <input class="btn btn1 btn-secondary" type="reset"  value="Annuleren">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="mapouter"><div class="gmap_canvas"><iframe width="100px" height="100px" id="gmap_canvas" src="https://maps.google.com/maps?q=Bavoortseweg%2027a%20&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                <div class="col-6">
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="80%" id="gmap_canvas" src="https://maps.google.com/maps?q=Bavoortseweg%2027a%20&t=&z=15&ie=UTF8&iwloc=&output=embed"
                      frameborder="0" ></iframe></div><style>
                      .mapouter{position:relative;text-align:left;height:594px;width:200px;margin-top:5px;}.gmap_canvas {overflow:hidden;background:none!important;height:594px;width:496px;}</style></div>
                 </div>

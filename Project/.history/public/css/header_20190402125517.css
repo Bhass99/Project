@@ -11,9 +11,9 @@
    margin-bottom: 4%;
 }
 
-.credintals{
- text-decoration:none !important;
-  color: white !important; 
+a{
+  text-decoration:none !important;
+  color: white;
 }
 
 .header {
