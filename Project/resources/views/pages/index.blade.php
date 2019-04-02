@@ -67,7 +67,9 @@
     @endguest
   </div>
 </section>
+
 @include('pages/contact')
+@include('inc/footer')
 @endsection
 
 

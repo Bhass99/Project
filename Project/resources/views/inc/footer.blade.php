@@ -1,10 +1,7 @@
-@extends('layout.layout')
 
 @section('extra-css')
-<link href="Footer.css" rel="stylesheet">
-
+    <link href="Footer.css" rel="stylesheet">
 @endsection
-@section('content')
 
 <footer class="footer-distributed">
 
@@ -36,6 +33,3 @@
 			</div>
 
 		</footer>
-
-
-@endsection
