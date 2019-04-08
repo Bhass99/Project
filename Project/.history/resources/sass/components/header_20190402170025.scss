@@ -1,0 +1,26 @@
+.gray-balk{
+    background-color:rgb(219,219,219);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    .gray-balk-text{
+        .credentials{
+            text-decoration: none;
+            color: white;
+            font-size: 10px;
+            
+        }
+    }
+}
+
+nav{
+   .logo{
+       width: 100%;
+       .image{
+           position: absolute;
+           left: 50%;
+       } 
+   }
+}

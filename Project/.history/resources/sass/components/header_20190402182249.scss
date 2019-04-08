@@ -1,0 +1,121 @@
+$portrait: 768px;
+$landscape: 992px;
+$desktop: 1200px;
+$mainColor: rgb(219,219,219);
+.gray-balk{
+    background-color:$mainColor;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+     @media screen and (min-width: $landscape) {
+        margin-bottom: 2%;
+    }
+    .gray-balk-text{
+        text-align: center;
+        .credentials{
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            
+        }
+    }
+}
+
+nav {
+    margin-bottom: 5%;
+
+    .logo{
+        display: flex !important;
+         justify-content: center;
+         align-items: center;
+        @media screen and (min-width: $landscape) {
+            justify-content: flex-start;
+        }
+         .image{
+             display: none;
+             @media screen and (min-width: $landscape) {
+                display: block;
+                float: left;
+            }
+         }
+         .image-mobile{
+            @media screen and (min-width: $portrait) {
+                width: 75px;
+                height: 75px;                    
+            }
+            @media screen and (min-width: $landscape) {
+                display: none;
+            }
+         }
+         i{
+             position: absolute;
+             right: 5%;
+             z-index: 100;
+             @media screen and (min-width: $landscape) {
+                display: none;
+            }
+         }
+    }
+    .nav-links{
+        visibility: hidden;
+        display: none;
+        background-color: rgba(0,0,0,0.9);
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 99;
+        @media screen and (min-width: $landscape) {
+            all: unset;
+            height: 50px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 50%;
+            
+            @media screen and (min-width: $portrait) {
+                margin: 40% 0;                    
+            }
+            @media screen and (min-width: $landscape) {
+                margin: 0;
+                border-bottom: 1px solid $mainColor;
+                border-top: 1px solid $mainColor;
+                padding: 1%;
+
+            }
+            li{
+                margin: 10% 0;
+                @media screen and (min-width: $landscape) {
+                    margin: 0 1%;
+                    display: inline;
+                }
+                 &:hover {
+                    opacity: 0.8;
+                    transform: scale(1.1)
+                }
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 2rem;
+                    @media screen and (min-width: $landscape) {
+                        color: #333333;
+                        font-size: 1.5rem   
+                    }
+
+                   
+                }
+            }
+        }
+    }
+    
+}
+
+.show{
+    visibility: visible !important;
+    display: block !important;
+    color: white;
+}

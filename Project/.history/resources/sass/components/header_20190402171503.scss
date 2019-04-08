@@ -1,0 +1,40 @@
+.gray-balk{
+    background-color:rgb(219,219,219);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    .gray-balk-text{
+        text-align: center;
+        .credentials{
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            
+        }
+    }
+}
+
+nav {
+    margin-bottom: 5%;
+    .logo{
+        display: flex !important;
+         justify-content: center;
+         align-items: center;
+         
+         i{
+             position: absolute;
+             right: 5%;
+         }
+    }
+    .nav-links{
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.show{
+    visibility: visible;
+    display: none;
+}
