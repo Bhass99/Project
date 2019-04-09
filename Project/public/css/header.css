@@ -90,6 +90,22 @@ nav .logo {
   }
 }
 
+@media screen and (min-width: 992px) {
+  nav .logo .container {
+    border-bottom: 1px solid black;
+    padding-bottom: 1%;
+  }
+
+  nav .logo .container::after {
+    content: "";
+    width: 50%;
+    border: 3px solid white;
+    position: absolute;
+    top: 98%;
+    left: 50%;
+  }
+}
+
 nav .logo .image {
   display: none;
 }

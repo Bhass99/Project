@@ -1,10 +1,12 @@
-#calendarSection {
-  height: 100vh;
-}
-
 @media screen and (max-width: 321px) {
   .fc-right {
     float: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fc-center {
+    margin-top: 15px;
   }
 }
 
