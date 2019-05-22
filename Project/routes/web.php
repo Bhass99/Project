@@ -21,9 +21,30 @@ Route::get('/footer', function () {
 Route::get('/loginn', function () {
     return view('pages.login');
 });
-// Auth::routes();
+
+// guests
+Route::middleware('guest')->group(function(){
+    Route::get('/guest/{event_id}', 'GuestController@index')->name('guest.index');
+    Route::post('/guest', 'GuestController@store')->name('guest.store');
+});
+
+Route::middleware('checkAuth')->group(function() {
+    Route::resource('volunteer', 'VolunteerController');
+    Route::patch('/refuse/{id}', 'VolunteerController@refuse')->name('refuseUser');
+
+});
+//admin
+Route::middleware('checkAdmin')->group(function(){
+    Route::get('/display', 'EventsController@show')->name('displayEvents');
+    Route::post('/store', 'EventsController@store')->name('saveDate');
+    Route::patch('/update/{id}', 'EventsController@update')->name('updateDate');
+    Route::delete('/delete/{id}', 'EventsController@delete')->name('deleteDate');
+    Route::get('/edit/{id}', 'EventsController@edit')->name('editDate');
+});
 
 // auth routes
+// Auth::routes();
+
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -37,14 +58,3 @@ $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
-
-Route::middleware('checkAuth')->group(function() {
-    Route::resource('volunteer', 'VolunteerController');
-});
-Route::middleware('checkAdmin')->group(function(){
-    Route::get('/display', 'EventsController@show')->name('displayEvents');
-    Route::post('/store', 'EventsController@store')->name('saveDate');
-    Route::patch('/update/{id}', 'EventsController@update')->name('updateDate');
-    Route::delete('/delete/{id}', 'EventsController@delete')->name('deleteDate');
-    Route::get('/edit/{id}', 'EventsController@edit')->name('editDate');
-});

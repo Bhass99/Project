@@ -13,6 +13,8 @@ section .footer-distributed{
   font-size: 22px;
   font-weight: 700;
   text-decoration: underline;
+  position: absolute;
+  bottom: 0;
   
 }
 
@@ -24,7 +26,7 @@ section .footer-distributed{
   text-align: left;
   font: normal 16px sans-serif;
   padding: 80px ;
-  
+ 
 }
 
 .footer-distributed .footer-left p {

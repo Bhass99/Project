@@ -14,44 +14,48 @@
   </div>
 @endif
     <div class="jumbotron">
-        <table class="table table-striped table-borderd table-hover">
-            <thead class="thead">
-                <tr class="warning">
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>color</th>
-                    <th>Begin</th>
-                    <th>Eind</th>
-                    <th>Wijzig</th>
-                    <th>Verwijder</th>
-                </tr>
-            </thead>
-            @foreach ($events as $event)
-                <tbody>
-                    <tr>
-                        <td>{{ $event->id}}</td>
-                        <td>{{ $event->title}}</td>
-                        <td> 
-                            <input type="color" disabled="disabled" class="form-control" value="{{$event->color}}"/>
+        <h2>Wijzig of verwijder data</h2>
 
-
-                        </td>
-                        <td>{{ $event->start_date}}</td>
-                        <td>{{ $event->end_date}}</td>
-                        <td><a href="{{route('editDate', $event->id)}}" class="btn btn-success">
-                            <i class="fas fa-edit">wijzig</i>
-                        </a></td>
-                        <td>
-                            <form method="POST" action="{{route('deleteDate', $event->id)}}">
-                                @csrf
-                                {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-danger">Verwijder</button>         
-                            </form>
-                        </td>
+        <div style="overflow-x:auto;">
+            <table class="table table-striped table-borderd table-hover">
+                <thead class="thead">
+                    <tr class="warning">
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Kleur</th>
+                        <th>Begin</th>
+                        <th>Eind</th>
+                        <th>Wijzig</th>
+                        <th>Verwijder</th>
                     </tr>
-                </tbody>
-            @endforeach
-        </table>
+                </thead>
+                @foreach ($events as $event)
+                    <tbody>
+                        <tr>
+                            <td>{{ $event->id}}</td>
+                            <td>{{ $event->title}}</td>
+                            <td> 
+                                <input type="color" disabled="disabled" class="form-control" value="{{$event->color}}"/>
+
+
+                            </td>
+                            <td>{{ $event->start_date}}</td>
+                            <td>{{ $event->end_date}}</td>
+                            <td><a href="{{route('editDate', $event->id)}}" class="btn btn-success">
+                                <i class="fas fa-edit">wijzig</i>
+                            </a></td>
+                            <td>
+                                <form method="POST" action="{{route('deleteDate', $event->id)}}">
+                                    @csrf
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class="btn btn-danger">Verwijder</button>         
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                @endforeach
+            </table>
+        </div>
         <a href="{{route('events')}}" class="btn btn-secondary">terug</a>
 
     </div>

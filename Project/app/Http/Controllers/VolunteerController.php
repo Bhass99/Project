@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Event;
+use App\Guest;
+use Carbon\Carbon;
 use App\Volunteers;
+use App\Mail\RefuseEmail;
+use App\Jobs\userReminder;
+use App\Mail\ConfirmEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class VolunteerController extends Controller
 {
@@ -14,7 +22,8 @@ class VolunteerController extends Controller
      */
     public function index()
     {
-        $volunteers = volunteers::all();
+        $volunteers = volunteers::orderBy('id', 'DESC')->paginate(10);
+
         return view('pages.volunteers',compact('volunteers'));
     }
 
@@ -83,9 +92,31 @@ class VolunteerController extends Controller
     public function update(Request $request, $id)
     {
         $volunteer = Volunteers::find($id);
-        $volunteer->permission = true;
-        $volunteer->check = false;
-        $volunteer->save();
+        $user = User::find($volunteer->user_id);
+        $event = Event::find($volunteer->event_id);
+        $guest = Guest::find($volunteer->guest_id);
+        $today = date('Y-m-d H:s:i');
+        $timeSec = strtotime($event->start_date) - strtotime($today) - 86400;
+
+        if ($user === NULL) {
+            Mail::to($guest->email)->send(new ConfirmEmail($guest,$event,$user));
+            if($timeSec > 0){
+                dispatch(new userReminder($user,$event,$guest))
+                ->delay($timeSec);
+            }
+        }elseif($guest === NULL){
+            Mail::to($user->email)->send(new ConfirmEmail($user,$event,$guest));
+            if($timeSec > 0){
+                dispatch(new userReminder($user,$event,$guest))
+                ->delay($timeSec);
+            }
+        }else{
+            return false;
+        }
+       
+        // $volunteer->permission = true;
+        // $volunteer->check = false;
+        // $volunteer->save();
         return redirect()->route('volunteer.index')->with('success', 'Je hebt successvol een vrijwilliger geaccepteerd');
     }
 
@@ -101,4 +132,26 @@ class VolunteerController extends Controller
         $volunteerDel->delete();
         return redirect()->route('volunteer.index')->with('success', 'U hebt successvol vrijwilliger verwijderd');
     }
+
+    public function refuse(Request $request, $id){
+        $volunteer = Volunteers::find($id);
+        $user = User::find($volunteer->user_id);
+        $event = Event::find($volunteer->event_id);
+        $guest = Guest::find($volunteer->guest_id);
+
+        if ($user === NULL) {
+            Mail::to($guest->email)->send(new RefuseEmail($guest,$event,$user));
+        }elseif($guest === NULL){
+            Mail::to($user->email)->send(new RefuseEmail($user,$event,$guest));
+        }else{
+            return false;
+        }
+
+
+        $volunteer->permission = false;
+        $volunteer->check = false;
+        $volunteer->save();
+        return redirect()->route('volunteer.index')->with('success', 'Je hebt successvol een vrijwilliger geweigerd');
+    }
+
 }

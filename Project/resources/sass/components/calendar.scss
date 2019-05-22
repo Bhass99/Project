@@ -1,6 +1,17 @@
 $portrait: 768px;
 $landscape: 992px;
 $desktop: 1200px;
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100%;
+}
+body{
+  min-height: 100%;
+  position: relative;
+}
 
 
 .fc-right{
@@ -36,9 +47,18 @@ $desktop: 1200px;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 40vw;
+    width: 95%;
     position: relative;
     transition: all 1s ease-in-out;
+    @media screen and(min-width: 768px){
+      width: 90vw;
+    }
+    @media screen and(min-width: 992px){
+      width: 80vw;
+    }
+     @media screen and(min-width: 1200px){
+      width: 70vw;
+    }
   }
   
   .popup h2 {
@@ -73,3 +93,8 @@ $desktop: 1200px;
     }
   }
 
+#guestWorkChoose{
+ .card{
+   height: 100%;
+ } 
+}

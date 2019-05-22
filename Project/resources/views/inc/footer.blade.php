@@ -1,8 +1,4 @@
 
-@section('extra-css')
-    <link href="css/footer.css" rel="stylesheet">
-@endsection
-
 <footer class="footer-distributed">
 	<div class="container">
 		<div class="footer-right">
@@ -14,7 +10,7 @@
 				<br>
 				Postcode:  3830 AB
 				<br>
-				Telefoonnummer:  06-28946024
+				Telefoonnummer: 06-28946024
 			</p>
 		</div>
 		<div class="footer-left">
@@ -22,7 +18,7 @@
 				<a class="link-1" href="#">&nbsp;</a>
 				<a href="#">&nbsp;</a>
 			</p>
-			<p>@Copyright GV-Impala 2019 &copy;</p>
+			<p> &copy; GV-Impala -{{date('Y')}} </p>
 		</div>
 	</div>
 </footer>

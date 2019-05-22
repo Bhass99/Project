@@ -13,9 +13,10 @@ class EventsController extends Controller
     public function index(){
         $events = [];
         $data = Event::all();
-        $emplNeed = Event::paginate(2);
-        $emplWork = Event::paginate(10);
-
+        $today = date('Y-m-d');
+        $emplNeed = Event::where('start_date', '>=', $today)->paginate(2);
+        $emplWork = Event::where('start_date', '>=', $today)->orderBy('id', 'DESC')->paginate(10);
+        $volunteerId = '';
         // caledar setup 
         foreach ($data as $row) {
             $events[] = Calendar::event(
@@ -37,11 +38,12 @@ class EventsController extends Controller
             'columnHeader' => false,
             'aspectRatio' => 1,
             'editable' => true,
+            'lang' => 'nl'
         ])->setCallbacks([
             'eventClick' => 'function() {
                 showModal();
             }'
-        ]); 
+        ]);
 
         // check if user has volunteerd so that the user cant volunteer twice to the same date
         if(!Auth::guest()){
@@ -49,8 +51,8 @@ class EventsController extends Controller
             $volunteerId = Volunteers::
                 where('user_id',$userId)
                 ->get()->count();
-        }
-        
+        } 
+
         return view('pages.index', compact('calendar','events','emplNeed','emplWork','userId','volunteerId'));
     }
     public function create(){

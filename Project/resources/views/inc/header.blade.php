@@ -5,7 +5,6 @@
                 <div class="gray-balk-text">
                     <a class="credentials float-left" href="#login">Login | </a>
                     <a class="credentials float-left" href="#register">&nbsp; Registreren</a>   
-                    <a class="credentials float-right" href="#contact">contact</a>   
                 </div>
                 @else
                 <div class="loged-in">

@@ -1,4 +1,4 @@
-<section id="contact">
+{{-- <section id="contact">
     <div class="container">
         <div class="card ">
             <div class="card-header text-center">
@@ -42,4 +42,4 @@
     </div>  
 </section>
 
-
+ --}}

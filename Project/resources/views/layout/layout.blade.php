@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/Footer.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:title" content="Impala schoonmaak" />
+    <meta property="og:description"
+      content="Hier kunt u verzoeken doen om vrijwillig te helpen bij Impala" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://groep7.rocole.nl/" />
 
+    <link rel="shortcut icon" href="{{ asset('storage/images/Favicon.png') }}">
     {{-- css --}}
     @yield('extra-css')
+    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/calendar.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/header.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/contact.css')}}">
@@ -27,6 +34,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang-all.js"></script>
+
+    {{-- <script src="{{asset('js/app.js')}}"></script> --}}
     <title>Impala</title>
 
 </head>
