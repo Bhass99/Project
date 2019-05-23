@@ -6,11 +6,13 @@
 
 <section id="calendarSection">
   <div class="container mb-4" >
+    
     @if (count($errors) > 0)
-      <div class="alert alert-danger">
-        <p>{{$errors}}</p>
-      </div>
-        
+      @foreach ($errors->all() as $error)
+        <div class="alert alert-danger">
+          <p>{{$error}}</p>
+        </div>
+      @endforeach
     @endif
     @if (session('success'))
       <div class="alert alert-success" role="alert">
@@ -54,20 +56,24 @@
         <div class="jumbotron">
           <table class="table table-striped table-borderd table-hover">
             <thead class="thead">
-              <h2>Op de volgende data hebben we mensen nodig</h2>
-              <tr class="warning">
-                <th>Begin datum</th>
-                <th>Eind datum</th>
-              </tr>
-                @foreach ($emplNeed as $event)
-                  <tbody>
-                      <tr>
-                          <td>{{ $event->start_date}}</td>
-                          <td>{{ $event->end_date}}</td>
-                      </tr>
-                  </tbody>
-                @endforeach
-            </thead>
+              @if (!$emplNeed->count() > 0)
+                <h2>Er is nog geen huidige data beschikbaar</h2>                  
+              @else
+                <h2>Op de volgende data hebben we mensen nodig</h2>
+                <tr class="warning">
+                  <th>Begin datum</th>
+                  <th>Eind datum</th>
+                </tr>
+                  @foreach ($emplNeed as $event)
+                    <tbody>
+                        <tr>
+                            <td>{{ $event->start_date}}</td>
+                            <td>{{ $event->end_date}}</td>
+                        </tr>
+                    </tbody>
+                  @endforeach
+              </thead>
+              @endif
           </table>
           {{$emplNeed->links()}}
           

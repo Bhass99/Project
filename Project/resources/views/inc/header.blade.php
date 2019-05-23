@@ -3,7 +3,7 @@
         <div class="container">
             @guest
                 <div class="gray-balk-text">
-                    <a class="credentials float-left" href="#login">Login | </a>
+                    <a class="credentials float-left" href="#headerLogin">Login | </a>
                     <a class="credentials float-left" href="#register">&nbsp; Registreren</a>   
                 </div>
                 @else

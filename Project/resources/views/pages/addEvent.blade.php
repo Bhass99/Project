@@ -2,13 +2,22 @@
 
 @section('admin-content')
     <div class="container">
-        @if(count($errors) > 0)
-            @foreach($errors->all() as $error)
-                <br>
+        @if (count($errors) > 0)
+            @foreach ($errors->all() as $error)
                 <div class="alert alert-danger">
-                    <li> {{ $error  }}</li>
+                <p>{{$error}}</p>
                 </div>
             @endforeach
+        @endif
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                <p>{{ session('success') }}</p>
+            </div>
+        @endif
+        @if (session('failed'))
+            <div class="alert alert-danger" role="alert">
+                <p>{{ session('failed') }}</p>
+            </div>
         @endif
         <div class="card">
             <div class="card-body">

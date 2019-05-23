@@ -36,6 +36,15 @@
   }
 }
 
+.gray-balk .gray-balk-text .credentials:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  font-weight: bold;
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+}
+
 .loged-in {
   height: 100%;
   width: 100%;

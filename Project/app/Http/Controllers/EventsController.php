@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use Carbon\Carbon;
 use App\Volunteers;
+use App\Jobs\deleteEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use MaddHatter\LaravelFullcalendar\Facades\Calendar;
@@ -71,9 +73,12 @@ class EventsController extends Controller
         $event->color = $request->input('color');
         $event->start_date = $request->input('start_date');
         $event->end_date = $request->input('end_date');
+        $time = strtotime($event->start_date);
+        $final = strtotime("+3 month", $time) - strtotime("today");
 
         $event->save();
-        return redirect()->route('events')->with('success', 'Er is een nieuw datum toegevoegd');
+        deleteEvent::dispatch($event)->delay(Carbon::now()->addSeconds($final));
+        return redirect()->route('createEvents')->with('success', 'Er is een nieuw datum toegevoegd');
     }
 
     public function show(){
@@ -98,7 +103,6 @@ class EventsController extends Controller
         $events->color = $request->input('color');
         $events->start_date = $request->input('start_date');
         $events->end_date = $request->input('end_date');
-
         $events->save();
         return redirect()->route('displayEvents')->with('success', 'Event is gewijzigd');
      }
