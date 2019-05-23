@@ -23,9 +23,11 @@ $grayTextColor: #333333;
             font-size: 14px;
             font-weight: bold;
             color: $grayTextColor;
+            
             @media screen and (min-width: $landscape) {
                 font-size: 16px;
             }
+            
         }
     }
 }
@@ -39,8 +41,14 @@ $grayTextColor: #333333;
         margin: 0;
         color: $grayTextColor !important;
         float: left;
+        text-decoration: none;
          @media screen and (min-width: $landscape) {
             font-size: 16px;
+        }
+        &:hover{
+            transform: scale(1.02);
+            font-weight: bold;
+            transition: transform 200ms ease-in-out;
         }
     }
     a{

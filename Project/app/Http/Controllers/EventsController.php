@@ -77,7 +77,7 @@ class EventsController extends Controller
     }
 
     public function show(){
-        $events = Event::orderBy('id', 'DESC')->get();
+        $events = Event::orderBy('id', 'DESC')->paginate(10);
         return view('pages.displayEvents',compact('events'));
     }
   

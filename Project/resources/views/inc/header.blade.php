@@ -14,6 +14,10 @@
                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
+                    @if (Auth::User()->role == 'admin')
+                        <a href="{{route('createEvents')}}" style="text-decoration: none" class="credentials float-right mr-3">Admin panel</a>
+                    @endif
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>    

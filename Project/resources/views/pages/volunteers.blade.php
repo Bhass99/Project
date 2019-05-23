@@ -1,6 +1,6 @@
-@extends('layout.layout')
+@extends('layout.admin')
 
-@section('content')
+@section('admin-content')
 
 <div class="container">
 @if (count($errors) > 0)
@@ -94,7 +94,7 @@
         <div class="d-flex" style="justify-content: center; align-items:center" >
             {{$volunteers->links()}}
         </div>
-        <a href="{{route('events')}}" class="btn btn-secondary">terug</a>
+        <a href="{{route('events')}}" class="btn btn-secondary float-right">terug</a>
     </div>
 </div>
 

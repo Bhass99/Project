@@ -29,6 +29,26 @@
       <div class="col-lg-8">
         {!! $calendar->calendar() !!}
         {!! $calendar->script() !!}
+        @guest
+        <div class="mt-4">
+          <a href="#login" type="button" class="btn btn-dark " >Kies een datum </a><br>
+          <small class="text-muted">Kies een datum om te gaan werken</small>
+        </div>
+        @else
+          @if (Auth::User()->role == 'admin')
+            {{-- <div class=""> 
+              <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">Voeg een event bij</button>
+              <a href="{{route('displayEvents')}}" class="btn btn-dark ml-2"> Wijzig/Verwijderen</a>
+              <a href="{{route('createEvents')}}" class="btn btn-dark ml-2">Admin panel</a>
+
+            </div> --}}
+          @else
+            <div class="mt-4"> 
+              <button type="button" class="btn btn-dark " data-toggle="modal" data-target=".workerChoose">Kies een datum </button><br>     
+              <small class="text-muted">Kies een datum om te gaan werken</small>      
+            </div>
+            @endif
+        @endguest
       </div>
       <div class="col-lg-4 mt-3 ">
         <div class="jumbotron">
@@ -50,28 +70,11 @@
             </thead>
           </table>
           {{$emplNeed->links()}}
+          
         </div>
       </div>
     </div>
-    @guest
-    <div class="mt-3">
-      <a href="#login" type="button" class="btn btn-dark " >Kies een datum </a><br>
-      <small class="text-muted">Kies een datum om te gaan werken</small>
-    </div>
-    @else
-      @if (Auth::User()->role == 'admin')
-        <div class="mt-3"> 
-          <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">Voeg een event bij</button>
-          <a href="{{route('displayEvents')}}" class="btn btn-dark ml-2"> Wijzig/Verwijderen</a>
-          <a href="{{route('volunteer.index')}}" class="btn btn-dark ml-2"> Bekijk wie er werken</a>
-        </div>
-      @else
-        <div class="mt-3"> 
-          <button type="button" class="btn btn-dark " data-toggle="modal" data-target=".workerChoose">Kies een datum </button><br>     
-          <small class="text-muted">Kies een datum om te gaan werken</small>      
-        </div>
-        @endif
-    @endguest
+   
   </div>
 </section>
 

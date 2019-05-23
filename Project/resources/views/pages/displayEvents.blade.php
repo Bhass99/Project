@@ -1,6 +1,6 @@
-@extends('layout.layout')
+@extends('layout.admin')
 
-@section('content')
+@section('admin-content')
 
 <div class="container">
 @if (count($errors) > 0)
@@ -20,7 +20,6 @@
             <table class="table table-striped table-borderd table-hover">
                 <thead class="thead">
                     <tr class="warning">
-                        <th>Id</th>
                         <th>Title</th>
                         <th>Kleur</th>
                         <th>Begin</th>
@@ -32,7 +31,6 @@
                 @foreach ($events as $event)
                     <tbody>
                         <tr>
-                            <td>{{ $event->id}}</td>
                             <td>{{ $event->title}}</td>
                             <td> 
                                 <input type="color" disabled="disabled" class="form-control" value="{{$event->color}}"/>
@@ -55,8 +53,11 @@
                     </tbody>
                 @endforeach
             </table>
+            <div class="d-flex" style="justify-content: center; align-items:center" >
+                {{$events->links()}}
+            </div>
         </div>
-        <a href="{{route('events')}}" class="btn btn-secondary">terug</a>
+        <a href="{{route('events')}}" class="btn btn-secondary float-right">terug</a>
 
     </div>
 </div>

@@ -114,9 +114,9 @@ class VolunteerController extends Controller
             return false;
         }
        
-        // $volunteer->permission = true;
-        // $volunteer->check = false;
-        // $volunteer->save();
+        $volunteer->permission = true;
+        $volunteer->check = false;
+        $volunteer->save();
         return redirect()->route('volunteer.index')->with('success', 'Je hebt successvol een vrijwilliger geaccepteerd');
     }
 

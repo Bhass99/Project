@@ -1,6 +1,6 @@
-@extends('layout.layout')
+@extends('layout.admin')
 
-@section('content')
+@section('admin-content')
     <div class="container">
         @if(count($errors) > 0)
             @foreach($errors->all() as $error)
@@ -11,31 +11,32 @@
             @endforeach
         @endif
         <div class="card">
-            <div class="card-heading">
-                <h1>Voeg een datum bij</h1>
-            </div>
             <div class="card-body">
-                <form method="POST" action="{{route('saveDate')}}" >
-                    @csrf
-                    <div class="form-group">
-                        <label>titel</label>
-                        <input type="text" class="form-control" name="title" placeholder="title"/>
-                    </div>
-                    <div class="form-group">
-                        <label>kleur</label>
-                        <input type="color" class="form-control" name="color" placeholder="kleur"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Start datum</label>
-                        <input type="datetime-local" class="form-control" name="start_date" placeholder="Start datum"/>
-                    </div>
-                    <div class="form-group">
-                        <label>eind datum</label>
-                        <input type="datetime-local" class="form-control" name="end_date" placeholder="Eind datum"/>
-                    </div>
-                    <button type="submit" class="btn btn-primary">verzenden</button>
-                </form>
+              <div class="card-title">
+                  <h1 class="text-dark">Voeg een datum bij</h1>
+              </div>
+              <form method="POST" action="{{route('saveDate')}}" >
+                  @csrf
+                  <div class="form-group">
+                      <label class="text-dark">titel</label>
+                      <input type="text" class="form-control" name="title" placeholder="title"/>
+                  </div>
+                  <div class="form-group">
+                      <label class="text-dark">kleur</label>
+                      <input type="color" class="form-control" name="color" placeholder="kleur"/>
+                  </div>
+                  <div class="form-group">
+                      <label class="text-dark">Start datum</label>
+                      <input type="datetime-local" class="form-control" name="start_date" placeholder="Start datum"/>
+                  </div>
+                  <div class="form-group">
+                      <label class="text-dark">eind datum</label>
+                      <input type="datetime-local" class="form-control" name="end_date" placeholder="Eind datum"/>
+                  </div>
+                  <button type="submit" class="btn btn-dark">verzenden</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">sluiten</button>
+              </form>
             </div>
-        </div>
+          </div>
     </div>
 @endsection

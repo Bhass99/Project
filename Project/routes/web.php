@@ -36,6 +36,7 @@ Route::middleware('checkAuth')->group(function() {
 //admin
 Route::middleware('checkAdmin')->group(function(){
     Route::get('/display', 'EventsController@show')->name('displayEvents');
+    Route::get('/create', 'EventsController@create')->name('createEvents');
     Route::post('/store', 'EventsController@store')->name('saveDate');
     Route::patch('/update/{id}', 'EventsController@update')->name('updateDate');
     Route::delete('/delete/{id}', 'EventsController@delete')->name('deleteDate');

@@ -47,12 +47,22 @@
   margin: 0;
   color: #333333 !important;
   float: left;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 992px) {
   .loged-in .credentials {
     font-size: 16px;
   }
+}
+
+.loged-in .credentials:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  font-weight: bold;
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
 }
 
 .loged-in a {

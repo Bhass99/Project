@@ -1,6 +1,6 @@
-@extends('layout.layout')
+@extends('layout.admin')
 
-@section('content')
+@section('admin-content')
     <div class="container">
         @if(count($errors) > 0)
         <br>
@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="card-heading">
-                    <h1>Voeg een datum bij</h1>
+                    <h1>Wijzig een datum bij</h1>
                 </div>
                 <form method="POST" action="{{route('updateDate', $event->id)}}" >
                     @csrf
