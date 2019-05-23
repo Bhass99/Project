@@ -40,7 +40,7 @@
                             <td>{{ $event->start_date}}</td>
                             <td>{{ $event->end_date}}</td>
                             <td><a href="{{route('editDate', $event->id)}}" class="btn btn-success">
-                                <i class="fas fa-edit">wijzig</i>
+                                <i class="fa fa-edit"></i>Wijzig
                             </a></td>
                             <td>
                                 <form method="POST" action="{{route('deleteDate', $event->id)}}">

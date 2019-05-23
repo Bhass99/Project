@@ -15,7 +15,9 @@ p {
     line-height: 1.7em;
     color: #999;
 }
-
+nav{
+    margin-bottom: 0 !important;
+}
 a,
 a:hover,
 a:focus {
@@ -62,7 +64,10 @@ a:focus {
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
+    
 }
+
+
 
 #sidebar.active {
     margin-left: -250px;
