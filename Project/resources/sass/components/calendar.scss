@@ -50,11 +50,15 @@ body{
     width: 95%;
     position: relative;
     transition: all 1s ease-in-out;
+    overflow-y: scroll;
+    height: 86vh;
     @media screen and(min-width: 768px){
-      width: 90vw;
+      overflow: auto;
+      height: auto;
     }
     @media screen and(min-width: 992px){
       width: 80vw;
+      
     }
      @media screen and(min-width: 1200px){
       width: 70vw;
@@ -88,9 +92,7 @@ body{
     .box{
       width: 70%;
     }
-    .popup{
-      width: 70%;
-    }
+    
   }
 
 #guestWorkChoose{

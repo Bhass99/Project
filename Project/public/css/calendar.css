@@ -49,11 +49,14 @@ body {
   width: 95%;
   position: relative;
   transition: all 1s ease-in-out;
+  overflow-y: scroll;
+  height: 86vh;
 }
 
 @media screen and (min-width: 768px) {
   .popup {
-    width: 90vw;
+    overflow: auto;
+    height: auto;
   }
 }
 
@@ -97,10 +100,6 @@ body {
 
 @media screen and (max-width: 700px) {
   .box {
-    width: 70%;
-  }
-
-  .popup {
     width: 70%;
   }
 }

@@ -97,7 +97,7 @@ class VolunteerController extends Controller
         $guest = Guest::find($volunteer->guest_id);
         $today = date('Y-m-d H:s:i');
         $timeSec = strtotime($event->start_date) - strtotime($today) - 86400;
-
+        
         if ($user === NULL) {
             Mail::to($guest->email)->send(new ConfirmEmail($guest,$event,$user));
             if($timeSec > 0){
