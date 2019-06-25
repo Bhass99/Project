@@ -17,8 +17,8 @@
     </h4>
     <br>
     <p>Bij deze sturen wij u een bevestegings email dat U geweigerd bent om te komen werken op <b>{{$event->start_date}}</b> 
-        tot <b>{{$event->end_date}}</b></b></p>
-    <p>Neem contactop als u meer wilt weten.</p>
+        tot <b>{{$event->end_date}}</b></p>
+    <p>Neem contact op als u meer wilt weten.</p>
     <p>Met vriendelijke groet,</p>
     <br>
     Het gv impala team

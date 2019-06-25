@@ -65,7 +65,7 @@
                                       
                                   @else
                                     @if(Auth::guest())
-                                        <a href="{{route('guest.index', ['event_id' => $event->id])}}" class="btn btn-secondary text-white" >Werk</a>
+                                        <a href="{{route('guest.index', ['event_id' => $event->id])}}" class="btn btn-secondary text-white" >Werk</button>
                                     @else
                                         <form method="POST" action="{{route('volunteer.store')}}">
                                         @csrf
@@ -352,7 +352,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-dark">
-                                    {{ __('Registreren') }}
+                                    {{ __('Register') }}
                                 </button>
                             </div>
                         </div>

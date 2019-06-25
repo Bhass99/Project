@@ -32,6 +32,8 @@ class reminderEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.reminder');
+        return $this->from('info@gvimpala.nl')
+                ->subject('Herinneringsmail')
+                ->markdown('mails.reminder');
     }
 }

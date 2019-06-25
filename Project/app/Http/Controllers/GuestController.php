@@ -54,7 +54,6 @@ class GuestController extends Controller
             
             $guest = new Guest($request->all());
             $guest->save();
-            // dd($request->all() + ['guest_id' => $guest->id]);
             $this->validate($request, [
                 
                 'event_id' => 'required',

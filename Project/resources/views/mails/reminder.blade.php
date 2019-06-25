@@ -19,7 +19,7 @@
     <p>Bij deze sturen wij u een herinnering email dat U komt helpen schoonmaken op <b>
         {{$event->start_date}}</b> 
         tot <b>{{$event->end_date}}</b></p>
-    <p>Neem contactop als u meer wilt weten.</p>
+    <p>Neem contact op als u meer wilt weten.</p>
     <p>Met vriendelijke groet,</p>
     <br>
     Het gv impala team

@@ -34,6 +34,8 @@ class RefuseEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.refuse');
+         return $this->from('info@gvimpala.nl')
+                ->subject('Weigeringsmail')
+                ->markdown('mails.refuse');
     }
 }
